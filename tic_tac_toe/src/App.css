@@ -24,7 +24,7 @@ body {
 /* Title */
 h1 {
   color: white;
-  font-size: 32px;
+  font-size: 2rem;
   margin-bottom: 15px;
   text-shadow: 0 0 10px #00f2fe, 0 0 20px #4facfe;
 }
@@ -32,18 +32,18 @@ h1 {
 /* Board */
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 8px;
   margin: 20px auto;
   position: relative;
+  width: 300px;
+  height: 300px;
 }
 
 /* Each cell */
 .cell {
-  width: 100px;
-  height: 100px;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: bold;
   border-radius: 15px;
   cursor: pointer;
@@ -71,45 +71,37 @@ h1 {
 .strike-line {
   position: absolute;
   background: linear-gradient(to right, #ff4e50, #f9d423);
-  height: 6px;
-  width: 100%;
   border-radius: 5px;
   animation: glowStrike 0.5s ease-in-out forwards;
 }
 
 @keyframes glowStrike {
-  from {
-    box-shadow: 0 0 0px transparent;
-  }
-  to {
-    box-shadow: 0 0 15px #ff4e50, 0 0 25px #f9d423;
-  }
+  from { box-shadow: 0 0 0px transparent; }
+  to { box-shadow: 0 0 15px #ff4e50, 0 0 25px #f9d423; }
 }
 
-/* Rows */
-.strike-row-1 { top: 50px; width: 89%;  }
-.strike-row-2 { top: 155px; width: 89%; }
-.strike-row-3 { top: 260px; width: 89%; }
+/* Strike Lines - now responsive using % */
+.strike-row-1 { top: 16.6%; left: 0; height: 6px; width: 100%; }
+.strike-row-2 { top: 50%; left: 0; height: 6px; width: 100%; }
+.strike-row-3 { top: 83.4%; left: 0; height: 6px; width: 100%; }
 
-/* Columns */
-.strike-col-1 { top: 0; left: 50px; width: 6px; height: 100%; }
-.strike-col-2 { top: 0; left: 158px; width: 6px; height: 100%; }
-.strike-col-3 { top: 0; left: 265px; width: 6px; height: 100%; }
+.strike-col-1 { top: 0; left: 16.6%; width: 6px; height: 100%; }
+.strike-col-2 { top: 0; left: 50%; width: 6px; height: 100%; }
+.strike-col-3 { top: 0; left: 83.4%; width: 6px; height: 100%; }
 
-/* Diagonals */
 .strike-diag-1 {
-  top: -15px;
-  left: -5px;
+  top: 0;
+  left: 0;
   height: 6px;
-  width: 110%;
+  width: 141%;
   transform: rotate(45deg);
   transform-origin: top left;
 }
 .strike-diag-2 {
-  top: 10px;
-  left: -15%;
+  top: 0;
+  right: 0;
   height: 6px;
-  width: 100%;
+  width: 141%;
   transform: rotate(-45deg);
   transform-origin: top right;
 }
@@ -121,7 +113,7 @@ button {
   padding: 12px 25px;
   margin-top: 20px;
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   border-radius: 12px;
   margin-left: 5px;
@@ -138,7 +130,7 @@ button:hover {
 /* Winner message */
 h2 {
   margin-top: 15px;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: bold;
   color: white;
   background: linear-gradient(45deg, #00f260, #24d86f);
@@ -147,49 +139,43 @@ h2 {
   box-shadow: 0 0 10px #00f260, 0 0 20px #1fe605;
 }
 
-/* Responsive Design */
-@media (max-width: 480px) {
+/* 📱 Responsive Design */
+@media (max-width: 500px) {
   .container {
     width: 90%;
     padding: 15px;
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .board {
-    grid-template-columns: repeat(3, 80px);
-    grid-template-rows: repeat(3, 80px);
-    gap: 6px;
+    width: 240px;
+    height: 240px;
   }
 
   .cell {
-    width: 80px;
-    height: 80px;
-    font-size: 26px;
+    font-size: 1.5rem;
   }
 
   button {
-    padding: 10px 18px;
-    font-size: 14px;
-  }
-
-  h2 {
-    font-size: 16px;
-    padding: 6px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 350px) {
   .board {
-    grid-template-columns: repeat(3, 70px);
-    grid-template-rows: repeat(3, 70px);
+    width: 200px;
+    height: 200px;
   }
 
   .cell {
-    width: 70px;
-    height: 70px;
-    font-size: 22px;
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
   }
 }
