@@ -81,12 +81,12 @@ h1 {
 }
 
 /* Strike Lines - now responsive using % */
-.strike-row-1 { top: 16.6%; left: 0; height: 6px; width: 100%; }
-.strike-row-2 { top: 50%; left: 0; height: 6px; width: 100%; }
+.strike-row-1 { top: 15%; left: 0; height: 6px; width: 100%; }
+.strike-row-2 { top: 49%; left: 0; height: 6px; width: 100%; }
 .strike-row-3 { top: 83.4%; left: 0; height: 6px; width: 100%; }
 
-.strike-col-1 { top: 0; left: 16.6%; width: 6px; height: 100%; }
-.strike-col-2 { top: 0; left: 50%; width: 6px; height: 100%; }
+.strike-col-1 { top: 0; left: 15%; width: 6px; height: 100%; }
+.strike-col-2 { top: 0; left: 49%; width: 6px; height: 100%; }
 .strike-col-3 { top: 0; left: 83.4%; width: 6px; height: 100%; }
 
 .strike-diag-1 {
