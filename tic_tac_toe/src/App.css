@@ -1,0 +1,149 @@
+/* Background */
+body {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Game Container */
+.container {
+  text-align: center;
+  background: rgba(37, 31, 31, 0.993);
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  width: 360px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Title */
+h1 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #00f2fe, 0 0 20px #4facfe;
+}
+
+/* Board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 8px;
+  margin: 20px auto;
+  position: relative;
+}
+
+/* Each cell */
+.cell {
+  width: 100px;
+  height: 100px;
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.cell:hover {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 15px #00f2fe, 0 0 25px #4facfe;
+}
+
+.cell:not(:empty) {
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Strike line */
+.strike-line {
+  position: absolute;
+  background: linear-gradient(to right, #ff4e50, #f9d423);
+  height: 6px;
+  width: 100%;
+  border-radius: 5px;
+  animation: glowStrike 0.5s ease-in-out forwards;
+}
+
+@keyframes glowStrike {
+  from {
+    box-shadow: 0 0 0px transparent;
+  }
+  to {
+    box-shadow: 0 0 15px #ff4e50, 0 0 25px #f9d423;
+  }
+}
+
+/* Rows */
+.strike-row-1 { top: 50px; width: 89%;  }
+.strike-row-2 { top: 155px; width: 89%;}
+.strike-row-3 { top: 260px; width: 89%;}
+
+/* Columns */
+.strike-col-1 { top: 0; left: 50px; width: 6px; height: 100%; }
+.strike-col-2 { top: 0; left: 158px; width: 6px; height: 100%; }
+.strike-col-3 { top: 0; left: 265px; width: 6px; height: 100%; }
+
+/* Diagonals */
+.strike-diag-1 {
+  top: -15px;
+  left: -5px;
+  height: 6px;
+  width: 110%;
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+.strike-diag-2 {
+  top: 10px;
+  left: -15%;
+  height: 6px;
+  width: 100%;
+  transform: rotate(-45deg);
+  transform-origin: top right;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(45deg, #ff4e50, #f9d423);
+  border: none;
+  padding: 12px 25px;
+  margin-top: 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+button:hover {
+  transform: scale(1.04);
+  /* box-shadow: 0 0 15px #ff4e50, 0 0 25px #f9d423; */
+  box-shadow: 0 0 15px #00f2fe, 0 0 25px #4facfe;
+}
+
+/* Winner message */
+h2 {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #00f260, #24d86f);
+  border-radius: 10px;
+  padding: 8px;
+  box-shadow: 0 0 10px #00f260, 0 0 20px #1fe605;
+}
